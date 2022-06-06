@@ -20,24 +20,28 @@ class _MenusDesignWidgetState extends State<MenusDesignWidget> {
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: SizedBox(
-          height: 260,
+          // height: 260,
           width: MediaQuery.of(context).size.width,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(height: 1),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.network(
-                  widget.model!.thumbnailUrl!,
-                  height: 200,
-                  width: 200,
-                  fit: BoxFit.cover,
+              Expanded(
+                flex: 3,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.network(
+                    widget.model!.thumbnailUrl!,
+                    height: 200,
+                    width: 200,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const SizedBox(height: 5),
               Text(
                 widget.model!.menuTitle!,
+                textAlign: TextAlign.center,
                 style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                     fontSize: 20,
@@ -48,6 +52,7 @@ class _MenusDesignWidgetState extends State<MenusDesignWidget> {
               ),
               Text(
                 widget.model!.menuInfo!,
+                textAlign: TextAlign.center,
                 style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                     fontSize: 12,

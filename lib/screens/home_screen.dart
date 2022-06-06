@@ -123,8 +123,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: const [
-                      SellerCarouselWidget(),
-                      ItemsAvatarCarousel(),
+                      Expanded(child: SellerCarouselWidget()),
+                      Expanded(child: ItemsAvatarCarousel()),
                     ],
                   ),
                 ),
